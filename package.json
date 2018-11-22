@@ -1,0 +1,25 @@
+{
+  "name": "eat-da-burger",
+  "version": "1.0.0",
+  "description": "A restaurant app that lets users input the names of burgers they'd like to eat.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LighthawkKnight/Eat-Da-Burger.git"
+  },
+  "author": "Jeff Daquioag",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "express-handlebars": "^2.0.1",
+    "mysql": "^2.10.2"
+  },
+  "bugs": {
+    "url": "https://github.com/LighthawkKnight/Eat-Da-Burger/issues"
+  },
+  "homepage": "https://github.com/LighthawkKnight/Eat-Da-Burger#readme"
+}
