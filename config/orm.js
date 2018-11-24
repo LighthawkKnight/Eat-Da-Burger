@@ -7,7 +7,7 @@ class orm {
     static selectAll(table, cb) {
         connection.query("SELECT * from ?;", table, (err,res) => {
             if (err) throw err;
-            cb(res);
+            cb(res);  // query response is sent back
         });
     }
 
@@ -15,7 +15,7 @@ class orm {
         var query = "INSERT INTO ?(?) VALUES (?)"
         connection.query(query, [table, columns.toString(), values.toString()], (err,res) => {
             if (err) throw err;
-            cb(res);
+            cb(res);  // query response is sent back
         });
     }
 
@@ -23,7 +23,7 @@ class orm {
         var query = "UPDATE ? SET ?=? WHERE ?=?;"
         connection.query(query, [table, setCol, setVal, whereCol, whereVal], (err,res) => {
             if (err) throw err;
-            cb(res);
+            cb(res);  // query response is sent back
         })
     }
 }
