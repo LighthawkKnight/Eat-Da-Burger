@@ -8,11 +8,11 @@ class burger {
     }
 
     static insertOne(burger_name, cb){
-        orm.insertOne("burgers", ["burger_name", "devoured"], [burger_name, false], cb);
+        orm.insertOne("burgers", ["burger_name", "devoured"], ['"'+burger_name+'"', false], cb);
     }
 
     static updateOne(burger_id, cb){
-        orm.updateOne("burgers", "devoured", true, "burger_id", burger_id, cb);
+        orm.updateOne("burgers", "devoured", true, "id", burger_id, cb);
     }
 }
 

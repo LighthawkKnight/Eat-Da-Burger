@@ -10,7 +10,7 @@ var connection = mysql.createConnection({
 
 connection.connect(err => {
     if (err) throw err;
-    console.log("Connected as " + connection.user);
+    console.log("Connected as id " + connection.threadId);
 });
 
 module.exports = connection;

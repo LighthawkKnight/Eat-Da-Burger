@@ -5,23 +5,25 @@ var connection = require("./connection.js");
 class orm {
 
     static selectAll(table, cb) {
-        connection.query("SELECT * from ?;", table, (err,res) => {
+        connection.query("SELECT * FROM " + table, (err,res) => {
             if (err) throw err;
             cb(res);  // query response is sent back
         });
     }
 
     static insertOne(table, columns, values, cb) {
-        var query = "INSERT INTO ?(?) VALUES (?)"
-        connection.query(query, [table, columns.toString(), values.toString()], (err,res) => {
+        var query = "INSERT INTO " + table + "(" + columns.toString() + ") VALUES(" + values.toString() + ")"
+        console.log(query);
+        connection.query(query, (err,res) => {
             if (err) throw err;
             cb(res);  // query response is sent back
         });
     }
 
     static updateOne(table, setCol, setVal, whereCol, whereVal, cb) {
-        var query = "UPDATE ? SET ?=? WHERE ?=?;"
-        connection.query(query, [table, setCol, setVal, whereCol, whereVal], (err,res) => {
+        var query = 'UPDATE ' + table + ' SET ' +  setCol + '=' + setVal + " WHERE " + whereCol + '=' + whereVal;
+        console.log(query);
+        connection.query(query, (err,res) => {
             if (err) throw err;
             cb(res);  // query response is sent back
         })
